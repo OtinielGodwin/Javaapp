@@ -1,0 +1,60 @@
+package ecole.ui.admin;
+
+import javax.swing.*;
+import java.awt.BorderLayout;
+import java.util.ArrayList;
+import java.util.List;
+
+// On importe nos classes "moteur"
+import ecole.gestion.Groupe;
+// Corrigé : import depuis "ecole.model" (singulier)
+import ecole.model.Professeur;
+
+/**
+ * C'est la fenêtre principale de l'Admin.
+ * Elle contient les onglets pour gérer l'école.
+ */
+public class AdminInterface extends JFrame {
+
+    private JTabbedPane systemeOnglets;
+
+    // --- Les "Moteurs" ---
+    private Groupe groupePrincipal;
+    private List<Professeur> listeProfesseurs;
+
+    public AdminInterface() {
+        this.setTitle("Panneau d'Administration");
+        this.setSize(800, 600);
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setLocationRelativeTo(null);
+
+        // 1. Initialiser nos "moteurs"
+        this.groupePrincipal = new Groupe("BUT SD 1A");
+        this.listeProfesseurs = new ArrayList<>();
+
+        // 2. Créer le système d'onglets
+        systemeOnglets = new JTabbedPane();
+
+        // 3. Créer les panneaux (nos "interfaces" 1 et 2)
+        // Note : On passe les classes corrigées aux constructeurs
+        JPanel ongletEtu = new PanelCreationEtudiant(this.groupePrincipal);
+        JPanel ongletProf = new PanelCreationProfesseur(this.listeProfesseurs);
+
+        // 4. Ajouter les onglets à la fenêtre
+        systemeOnglets.addTab("👤 Créer Étudiant", ongletEtu);
+        systemeOnglets.addTab("👨‍🏫 Créer Professeur", ongletProf);
+
+        // 5. Ajouter le système d'onglets à la fenêtre
+        this.add(systemeOnglets, BorderLayout.CENTER);
+        this.setVisible(true);
+    }
+
+    // Le main pour lancer TOUTE l'application
+    public static void main(String[] args) {
+        SwingUtilities.invokeLater(new Runnable() {
+            public void run() {
+                new AdminInterface();
+            }
+        });
+    }
+}
