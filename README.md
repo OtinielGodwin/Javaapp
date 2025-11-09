@@ -1,4 +1,4 @@
-<img src="[https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg](https://www.google.com/imgres?q=logiciel%20java%20logo&imgurl=https%3A%2F%2Fcdn8.futura-sciences.com%2Fa1920%2Flogitheque%2Flogiciel-java-java-runtime-environment-jre.jpg&imgrefurl=https%3A%2F%2Fwww.futura-sciences.com%2Ftech%2Fdefinitions%2Flogiciels-java-java-runtime-environment-jre-27221%2F&docid=33OwxgOsgSzsNM&tbnid=LzrvFbiZ58WecM&vet=12ahUKEwifu_Lh5uWQAxVVTqQEHWHVNwwQM3oECDcQAA..i&w=1920&h=1080&hcb=2&ved=2ahUKEwifu_Lh5uWQAxVVTqQEHWHVNwwQM3oECDcQAA)" alt="Java" width="80" height="80"/>
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" width="80" height="80"/>
 # 💎 Java App
 
 Il met en œuvre les principes de la programmation orientée objet pour créer un mini-système de gestion d'école, jusqu'à l'interface graphique (Swing).
