@@ -136,7 +136,7 @@ public class Personne {
     /**
      * Affiche l'âge de la personne dans la console (pour le débogage).
      */
-    void afficheAge() {
+    public void afficheAge() {
         System.out.println(age);
     }
 

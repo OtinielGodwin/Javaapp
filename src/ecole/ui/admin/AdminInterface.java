@@ -7,7 +7,6 @@ import java.util.List;
 
 // On importe nos classes "moteur"
 import ecole.gestion.Groupe;
-// Corrigé : import depuis "ecole.model" (singulier)
 import ecole.model.Professeur;
 
 /**
@@ -36,7 +35,6 @@ public class AdminInterface extends JFrame {
         systemeOnglets = new JTabbedPane();
 
         // 3. Créer les panneaux (nos "interfaces" 1 et 2)
-        // Note : On passe les classes corrigées aux constructeurs
         JPanel ongletEtu = new PanelCreationEtudiant(this.groupePrincipal);
         JPanel ongletProf = new PanelCreationProfesseur(this.listeProfesseurs);
 

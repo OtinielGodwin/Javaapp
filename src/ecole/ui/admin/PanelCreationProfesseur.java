@@ -1,4 +1,4 @@
-// Corrigé : le package est maintenant "ecole.ui.admin"
+
 package ecole.ui.admin;
 
 import javax.swing.*;
@@ -7,7 +7,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
 
-// Corrigé : tous les imports pointent vers "ecole.model" (singulier)
 import ecole.model.Professeur;
 import ecole.model.Genre;
 import ecole.exception.AgeInvalidException;

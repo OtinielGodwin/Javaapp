@@ -5,22 +5,19 @@ import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
-import java.util.ArrayList;
+
 
 // On importe tous les "moteurs"
 import ecole.gestion.Groupe;
 import ecole.gestion.Cours;
-import ecole.model.Professeur;
 import ecole.model.Etudiant;
-import ecole.model.Genre;
-import ecole.model.Filiere;
-import ecole.model.Note;
+
 
 /**
  * C'est la fenêtre de connexion pour l'étudiant.
  * Elle vérifie l'ID et le Nom avant d'ouvrir l'espace personnel.
  */
-// ERREUR 1 CORRIGÉE : J'ai enlevé 'static'
+
 public class LoginEtudiant extends JFrame implements ActionListener {
 
     // --- Les "Moteurs" (Données de l'application) ---
@@ -74,10 +71,8 @@ public class LoginEtudiant extends JFrame implements ActionListener {
 
                 Etudiant etudiantTrouve = groupeCible.findEtudiant(numEtu);
 
-                // ERREUR 2 CORRIGÉE : .getnom() est devenu .getNom()
                 if (etudiantTrouve != null && etudiantTrouve.getnom().equalsIgnoreCase(nom)) {
 
-                    // 4. SUCCÈS !
                     JOptionPane.showMessageDialog(this, "Connexion réussie ! Bienvenue " + etudiantTrouve.getPrenom());
 
                     new EtudiantInterface(etudiantTrouve, this.listeDesCours);
@@ -85,7 +80,6 @@ public class LoginEtudiant extends JFrame implements ActionListener {
                     this.dispose();
 
                 } else {
-                    // 5. ÉCHEC
                     throw new Exception("Numéro d'étudiant ou nom incorrect.");
                 }
 
@@ -94,9 +88,5 @@ public class LoginEtudiant extends JFrame implements ActionListener {
             }
         }
     }
-
-    // NOTE: J'ai enlevé le 'main' d'ici pour que la classe soit plus propre.
-    // Il est mieux de le mettre dans une classe séparée 'LancementEtudiant.java'
-    // mais tu peux le remettre ici si tu préfères.
 }
 

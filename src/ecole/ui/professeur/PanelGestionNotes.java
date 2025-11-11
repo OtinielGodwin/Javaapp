@@ -34,7 +34,7 @@ public class PanelGestionNotes extends JPanel implements ActionListener {
 
         this.setLayout(new BorderLayout(10, 10));
 
-        // --- 1. HAUT (NORTH) : Le choix du cours ---
+        // 1. Le choix du cours
         List<Cours> coursDuProf = new ArrayList<>();
         for (Cours c : listeCours) {
             if (c.getReferent().equals(profConnecte)) {
@@ -45,12 +45,12 @@ public class PanelGestionNotes extends JPanel implements ActionListener {
         dropdownCours.addActionListener(this);
         this.add(dropdownCours, BorderLayout.NORTH);
 
-        // --- 2. CENTRE (CENTER) : La liste des étudiants ---
+        // 2. La liste des étudiants
         listModel = new DefaultListModel<>();
         listeEtudiants = new JList<>(listModel);
         this.add(new JScrollPane(listeEtudiants), BorderLayout.CENTER);
 
-        // --- 3. BAS (SOUTH) : Le champ de note et le bouton ---
+        // 3. Le champ de note et le bouton
         JPanel panelSud = new JPanel(new BorderLayout(10, 0));
         panelSud.add(new JLabel("Note :"), BorderLayout.WEST);
         champNote = new JTextField();
@@ -60,7 +60,6 @@ public class PanelGestionNotes extends JPanel implements ActionListener {
         panelSud.add(boutonEnregistrerNote, BorderLayout.EAST);
         this.add(panelSud, BorderLayout.SOUTH);
 
-        // On charge les étudiants du premier cours (si un cours existe)
         mettreAJourListeEtudiants();
     }
 
@@ -73,7 +72,6 @@ public class PanelGestionNotes extends JPanel implements ActionListener {
         Cours coursSelectionne = (Cours) dropdownCours.getSelectedItem();
 
         if (coursSelectionne != null) {
-            // C'EST ICI QU'ON UTILISE LA MAP DE GROUPE :
             // On récupère la Map<String, Etudiant> et on prend ses .values()
             for (Etudiant etu : coursSelectionne.getGroupe().getMembres().values()) {
                 listModel.addElement(etu);
@@ -104,11 +102,10 @@ public class PanelGestionNotes extends JPanel implements ActionListener {
                 // 3. Appeler le constructeur de Note (qui lance ses exceptions)
                 Note nouvelleNote = new Note(etuSelectionne, coursSelectionne, valeur);
 
-                // 4. C'EST ICI QU'ON UTILISE LA MAP DE COURS :
                 // On appelle la méthode qui fait .put(etudiantId, nouvelleNote)
                 coursSelectionne.ajouterNote(nouvelleNote);
 
-                // 5. Succès
+                // 4. Succès
                 JOptionPane.showMessageDialog(this, "Note enregistrée pour " + etuSelectionne.getPrenom());
                 champNote.setText("");
 

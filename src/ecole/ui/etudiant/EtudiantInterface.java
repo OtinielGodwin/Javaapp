@@ -31,7 +31,6 @@ public class EtudiantInterface extends JFrame {
 
         this.setTitle("Espace Étudiant - " + etu.getPrenom() + " " + etu.getnom());
         this.setSize(600, 400);
-        // Important : Ne pas faire EXIT_ON_CLOSE, sinon ça ferme tout
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         this.setLocationRelativeTo(null);
 

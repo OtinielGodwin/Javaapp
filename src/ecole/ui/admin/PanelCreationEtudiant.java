@@ -1,4 +1,4 @@
-// Corrigé : le package est maintenant "ecole.ui.admin"
+
 package ecole.ui.admin;
 
 import javax.swing.*;
@@ -8,7 +8,6 @@ import java.awt.event.ActionListener;
 
 // On importe tout ce dont on a besoin
 import ecole.gestion.Groupe;
-// Corrigé : tous les imports pointent vers "ecole.model" (singulier)
 import ecole.model.Etudiant;
 import ecole.model.Genre;
 import ecole.model.Filiere;

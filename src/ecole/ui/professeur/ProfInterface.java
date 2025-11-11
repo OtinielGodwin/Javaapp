@@ -21,7 +21,7 @@ public class ProfInterface extends JFrame {
 
     private JTabbedPane systemeOnglets;
 
-    // --- Les "Moteurs" (Données de l'application) ---
+    // Les Moteurs
     private Professeur profConnecte;
     private List<Groupe> listeDesGroupes;
     private List<Cours> listeDesCours;
@@ -34,13 +34,12 @@ public class ProfInterface extends JFrame {
         this.setTitle("Espace Professeur - " + prof.getPrenom() + " " + prof.getnom());
         this.setSize(800, 600);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setLocationRelativeTo(null); // Ouvre au centre
+        this.setLocationRelativeTo(null);
 
         // 1. Créer le système d'onglets
         systemeOnglets = new JTabbedPane();
 
         // 2. Créer les panneaux (nos "interfaces" 1 et 2)
-        // On "donne" les moteurs aux panneaux dont ils ont besoin
         JPanel onglet1 = new PanelCreationCours(profConnecte, listeDesGroupes, listeDesCours);
         JPanel onglet2 = new PanelGestionNotes(profConnecte, listeDesCours);
 
@@ -57,8 +56,6 @@ public class ProfInterface extends JFrame {
      * Main de test pour lancer UNIQUEMENT l'interface Professeur.
      */
     public static void main(String[] args) {
-
-        // --- On crée des données factices pour tester ---
 
         // 1. Créer un prof
         Professeur profTest = new Professeur("Tournesol", "Tryphon", 60, Genre.HOMME, "Physique", 5000);
@@ -82,7 +79,6 @@ public class ProfInterface extends JFrame {
         // 5. Lancer l'interface
         SwingUtilities.invokeLater(new Runnable() {
             public void run() {
-                // On donne les données factices à l'interface
                 new ProfInterface(profTest, tousLesGroupes, tousLesCours);
             }
         });
