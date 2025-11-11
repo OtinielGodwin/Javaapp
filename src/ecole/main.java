@@ -160,11 +160,6 @@ public class main {
         } catch (Etudiantpresent ex) {
             System.err.println("Exception attrapée : " + ex.getMessage());
         }
-
         */
-
-        SwingUtilities.invokeLater(() -> new AppManager());
-
-
     }
 }
