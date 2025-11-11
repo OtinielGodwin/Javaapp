@@ -51,36 +51,4 @@ public class ProfInterface extends JFrame {
         this.add(systemeOnglets, BorderLayout.CENTER);
         this.setVisible(true);
     }
-
-    /**
-     * Main de test pour lancer UNIQUEMENT l'interface Professeur.
-     */
-    public static void main(String[] args) {
-
-        // 1. Créer un prof
-        Professeur profTest = new Professeur("Tournesol", "Tryphon", 60, Genre.HOMME, "Physique", 5000);
-
-        // 2. Créer un groupe et y ajouter des étudiants
-        Groupe groupeTest = new Groupe("BUT SD 1A");
-        try {
-            groupeTest.ajouterEtudiant(new Etudiant("Martin", "Bob", 20, "e123", Genre.HOMME, Filiere.BUT_SCIENCE_DES_DONNEES));
-            groupeTest.ajouterEtudiant(new Etudiant("Dupont", "Alice", 21, "e456", Genre.FEMME, Filiere.BUT_SCIENCE_DES_DONNEES));
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        // 3. Créer une liste de groupes
-        List<Groupe> tousLesGroupes = new ArrayList<>();
-        tousLesGroupes.add(groupeTest);
-
-        // 4. Créer une liste (vide) de cours
-        List<Cours> tousLesCours = new ArrayList<>();
-
-        // 5. Lancer l'interface
-        SwingUtilities.invokeLater(new Runnable() {
-            public void run() {
-                new ProfInterface(profTest, tousLesGroupes, tousLesCours);
-            }
-        });
-    }
 }

@@ -4,11 +4,19 @@ import ecole.gestion.Groupe;
 import ecole.gestion.Cours;
 import ecole.model.*;
 import ecole.exception.*;
+
+import javax.swing.*;
 import java.util.List;
 import java.util.ArrayList;
 
 public class main {
     public static void main ( String [] args) {
+
+        //Interface graphique
+
+        SwingUtilities.invokeLater(() -> new AppManager());
+
+        /* Décommenter pour lancer les tests
 
         // TEST DES ATTRIBUTS ET ACCESSEURS
 
@@ -152,6 +160,11 @@ public class main {
         } catch (Etudiantpresent ex) {
             System.err.println("Exception attrapée : " + ex.getMessage());
         }
+
+        */
+
+        SwingUtilities.invokeLater(() -> new AppManager());
+
 
     }
 }

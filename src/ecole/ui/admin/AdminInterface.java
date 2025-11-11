@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 // On importe nos classes "moteur"
+import ecole.gestion.Cours;
 import ecole.gestion.Groupe;
 import ecole.model.Professeur;
 
@@ -21,7 +22,7 @@ public class AdminInterface extends JFrame {
     private Groupe groupePrincipal;
     private List<Professeur> listeProfesseurs;
 
-    public AdminInterface() {
+    public AdminInterface(Groupe groupeCible, List<Professeur> listeProfesseurs, List<Cours> listeCours) {
         this.setTitle("Panneau d'Administration");
         this.setSize(800, 600);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -47,12 +48,6 @@ public class AdminInterface extends JFrame {
         this.setVisible(true);
     }
 
-    // Le main pour lancer TOUTE l'application
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(new Runnable() {
-            public void run() {
-                new AdminInterface();
-            }
-        });
+    public AdminInterface(Groupe groupeGlobal, List<Professeur> listeProfesseurs) {
     }
 }
